@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 20/10</title>
+    <style>
+        body {
+            background-color: #ffebee;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: none; /* Ẩn trang web cho đến khi hết thông báo */
+        }
+        h1 {
+            font-size: 50px;
+            color: #d81b60;
+            margin-top: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 24px;
+            color: #ad1457;
+            margin-top: 20px;
+        }
+        .heart {
+            width: 100px;
+            height: 90px;
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e91e63;
+            position: absolute;
+            top: 0;
+            left: 50px;
+        }
+        .heart::before {
+            left: 0;
+        }
+        .heart::after {
+            transform: rotate(45deg);
+        }
+        .heart::before {
+            transform: rotate(-45deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chúc Em Có Một Ngày 20/10 Đáng Nhớ!</h1>
+    <p>Iu em 1000 lần &lt;3</p>
+    <div class="heart"></div>
+
+    <script>
+        let count = 0;
+        function showAlert() {
+            if (count < 5) {
+                if (confirm("Bạn đang truy cập vào một trang web không xác định, tiếp tục chứ?")) {
+                    count++;
+                    showAlert();
+                }
+            } else {
+                if (confirm("Đùa thế đủ rồi, giờ là thật đây!")) {
+                    document.body.style.display = "block";  // Hiện trang web khi hết thông báo
+                }
+            }
+        }
+
+        // Hiện thông báo đầu tiên khi trang vừa load
+        window.onload = function() {
+            showAlert();
+        };
+    </script>
+</body>
+</html>
